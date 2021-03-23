@@ -660,7 +660,33 @@
 // What is an IIFE and why are they used. 
 // Answer:  Immediately Invoked Function Expression or Self-Executing Anonymous Function. 
 // A JS function that runs as soon as it's identified.
+// These functions are called inside of the function so they don't have to be called outside of the function.
+//the main reason to use an IIFE is to preserve a private scope within your function.
 
+
+
+(function numberTimesTwo(num) {
+    console.log(num * 2);
+})(10);
+
+
+//--------------------------------------
+//--------------------------------------   
+  (function() {
+    
+    function getTotal(a, b) {
+      return a + b;
+    }
+    
+    var $ = 'currency';
+    
+    if (true) console.log('hello world');
+    
+  })();
+  
+//###########################################################################################################################################
+
+  
 
 
 
