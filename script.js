@@ -584,11 +584,11 @@
 
 //Write a function that reverses a string. The input string is given as an array of characters s.
 
-function stringReverse(text) {
-   console.log(text.reverse())
-} 
+// function stringReverse(text) {
+//    console.log(text.reverse())
+// } 
 
-stringReverse(["h", "e", "l", "l", "o"])
+// stringReverse(["h", "e", "l", "l", "o"])
 
 
 // Example 1:
@@ -602,40 +602,71 @@ stringReverse(["h", "e", "l", "l", "o"])
 
 
 
-const array101 = [200, 500, 5838, 39, 29];
+// const array101 = [200, 500, 5838, 39, 29];
 
-function myFunction101() {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    console.log(array101.reduce(reducer))
-}
+// function myFunction101() {
+//     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+//     console.log(array101.reduce(reducer))
+// }
 
-myFunction101()
-
-
+// myFunction101()
 
 
 
 
-//Running Sum of 1d Array
-
-//Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
-
-//Return the running sum of nums.
 
 
-var runningSum = function(nums) {
-    let sum = 0;
-    for(i = 0; i < nums.length ; i++){
-        sum += nums[i];
-        nums[i] = sum;
-    }
-    return nums;
-};
+// //Running Sum of 1d Array
+
+// //Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+// //Return the running sum of nums.
+
+
+// var runningSum = function(nums) {
+//     let sum = 0;
+//     for(i = 0; i < nums.length ; i++){
+//         sum += nums[i];
+//         nums[i] = sum;
+//     }
+//     return nums;
+// };
 
 
 
-let nums = runningSum([1,2,3,4])
-console.log(nums)
+// let nums = runningSum([1,2,3,4])
+// console.log(nums)
+
+
+//###########################################################################################################################################
+// Write a function called Triple add that returns the total of all numbers added together
+// Example:    tripleAdd(10)(20)(30)   Output:  60
+
+// function tripleAdd(num1) {
+//     return function(num2) {
+//         return function(num3){
+//         return num1 + num2 + num3
+//         }
+//     }
+// }
+
+// tripleAdd(10)(20)(30); //return total of all 3 of these numbers
+
+
+
+
+
+//###########################################################################################################################################
+// What is an IIFE and why are they used. 
+// Answer:  Immediately Invoked Function Expression or Self-Executing Anonymous Function. 
+// A JS function that runs as soon as it's identified.
+
+
+
+
+
+
+
 
 //###########################################################################################################################################
 //###########################################################################################################################################
