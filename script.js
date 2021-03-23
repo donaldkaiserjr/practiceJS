@@ -665,29 +665,42 @@
 
 
 
-(function numberTimesTwo(num) {
-    console.log(num * 2);
-})(10);
+// (function numberTimesTwo(num) {
+//     console.log(num * 2);
+// })(10);
 
 
-//--------------------------------------
-//--------------------------------------   
-  (function() {
+// //--------------------------------------
+// //--------------------------------------   
+//   (function() {
     
-    function getTotal(a, b) {
-      return a + b;
-    }
+//     function getTotal(a, b) {
+//       return a + b;
+//     }
     
-    var $ = 'currency';
+//     var $ = 'currency';
     
-    if (true) console.log('hello world');
+//     if (true) console.log('hello world');
     
-  })();
+//   })();
   
 //###########################################################################################################################################
 
-  
+//Look at the code shown. It adds five buttons to the screen. What will be alerted to the screen when you click button 5 and why? 
 
+function createButtons() {
+    for (let i = 1; i <= 5; i++) {
+      let body = document.getElementsByTagName("BODY")[0];
+      let button = document.createElement("BUTTON");
+      button.innerHTML = 'Button ' + i;
+      button.onclick = function() {
+           alert('This is button ' + i);
+      }
+      body.appendChild(button);
+    }
+ }
+  
+ createButtons();
 
 
 
