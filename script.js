@@ -427,7 +427,7 @@
 
 
 // function myFunction(text) {
-//     document.getElementById("example").innerHTML = "I hate learning programming from people online. They don't know how to fucking teach!"
+//     document.getElementById("example").innerHTML = "I hate learning programming from people online. They don't explain why they do certain things"
 // }
 
 
@@ -579,15 +579,63 @@
 
 //###########################################################################################################################################
 
+//344. Reverse String
+
+
+//Write a function that reverses a string. The input string is given as an array of characters s.
+
+function stringReverse(text) {
+   console.log(text.reverse())
+} 
+
+stringReverse(["h", "e", "l", "l", "o"])
+
+
+// Example 1:
+
+// Input: s = ["h","e","l","l","o"]
+// Output: ["o","l","l","e","h"]
+// // Example 2:
+
+// Input: s = ["H","a","n","n","a","h"]
+// Output: ["h","a","n","n","a","H"]
+
+
+
+const array101 = [200, 500, 5838, 39, 29];
+
+function myFunction101() {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(array101.reduce(reducer))
+}
+
+myFunction101()
 
 
 
 
 
 
+//Running Sum of 1d Array
+
+//Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+//Return the running sum of nums.
+
+
+var runningSum = function(nums) {
+    let sum = 0;
+    for(i = 0; i < nums.length ; i++){
+        sum += nums[i];
+        nums[i] = sum;
+    }
+    return nums;
+};
 
 
 
+let nums = runningSum([1,2,3,4])
+console.log(nums)
 
 //###########################################################################################################################################
 //###########################################################################################################################################
