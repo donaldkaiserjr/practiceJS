@@ -748,24 +748,48 @@
 // It refers to whatever obejct it is directly inside of.   If you went into your browswer and typed console.log(this), it would refer to the global window.
 
 
-let house = {
-    price: 100000,
-    squareFeet: 2000, 
-    owner: 'Taylor', 
-    getPricePerSquareFoot: function() {
-        return this.price / this.squareFeet;  //this refers to the house object
-    }
+// let house = {
+//     price: 100000,
+//     squareFeet: 2000, 
+//     owner: 'Taylor', 
+//     getPricePerSquareFoot: function() {
+//         return this.price / this.squareFeet;  //this refers to the house object
+//     }
+// }
+
+// console.log(house.price); //100000
+// console.log(house.getPricePerSquareFoot()) // 50
+
+
+//###########################################################################################################################################
+
+// What is variable and function Hoisting?
+// Variables and functions are hoisted to the top of the scope in which they are declared (global or function scope)
+// So variable and function hoisting is when the JS interpreter looks ahead in the code to find all of the variable and function declarations, 
+// and then it hoists those declarations to the top of the file...
+// console.log(color)  // variable can't be accesed before initialization
+
+// let color = "blue";     // behind the scenes, the interpreter hoists color to the top of the screen but doesn't set it equal to anything. Then as the interpreter moves through the file up to where it was originally declared, it sets the variable to the string "blue"
+
+
+
+
+// console.log(getProduct(2, 3))  // Important:  Can't access the function yet because getProduct is a function expression (function has let, var, or const keyword).
+
+// let getProduct = function(num1, num2) {
+//     return num1 * num2
+// }
+
+
+
+
+console.log(thisFunction(8, 9))  // This works fine and returns 17.  This is because thisFunction is a function declaration. 
+// Function declarations are useful because they make hoisting easier.
+
+
+function thisFunction(num1, num2) {
+    return num1 + num2
 }
-
-console.log(house.price); //100000
-console.log(house.getPricePerSquareFoot()) // 50
-
-
-
-
-
-
-
 
 
 
