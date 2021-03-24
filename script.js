@@ -686,21 +686,61 @@
   
 //###########################################################################################################################################
 
-//Look at the code shown. It adds five buttons to the screen. What will be alerted to the screen when you click button 5 and why? 
+// //Look at the code shown. It adds five buttons to the screen. What will be alerted to the screen when you click button 5 and why? 
 
-function createButtons() {
-    for (let i = 1; i <= 5; i++) {
-      let body = document.getElementsByTagName("BODY")[0];
-      let button = document.createElement("BUTTON");
-      button.innerHTML = 'Button ' + i;
-      button.onclick = function() {
-           alert('This is button ' + i);
-      }
-      body.appendChild(button);
-    }
- }
+// function createButtons() {
+//     for (let i = 1; i <= 5; i++) {
+//       let body = document.getElementsByTagName("BODY")[0];
+//       let button = document.createElement("BUTTON");
+//       button.innerHTML = 'Button ' + i;
+//       button.onclick = function() {
+//            alert('This is button ' + i);
+//       }
+//       body.appendChild(button);
+//     }
+//  }
   
- createButtons();
+//  createButtons();
+
+
+
+
+
+//###########################################################################################################################################
+
+//What is a Closure?  Make an example
+// A closure is an inner function
+
+function init(name) {
+    
+    function displayName() {
+        console.log(name)
+    }
+    displayName();
+}
+
+init("Mozilla")
+
+
+
+
+const globalVariable = 'global var'
+
+function outterFunc(param1) {
+    const variable1 = "Var one"
+
+    function innerFunc(param2) {
+        const variable2 = "Var two"
+
+        console.log('globalVariable: ', globalVariable);
+        console.log('variable1: ', variable1);
+        console.log('variable2: ', variable2)
+    }
+    innerFunc('param one')
+}
+
+outterFunc('param two')
+
 
 
 
