@@ -711,35 +711,60 @@
 //What is a Closure?  Make an example
 // A closure is an inner function
 
-function init(name) {
+// function init(name) {
     
-    function displayName() {
-        console.log(name)
+//     function displayName() {
+//         console.log(name)
+//     }
+//     displayName();
+// }
+
+// init("Mozilla")
+
+
+
+
+// const globalVariable = 'global var'
+
+// function outterFunc(param1) {
+//     const variable1 = "Var one"
+
+//     function innerFunc(param2) {
+//         const variable2 = "Var two"
+
+//         console.log('globalVariable: ', globalVariable);
+//         console.log('variable1: ', variable1);
+//         console.log('variable2: ', variable2)
+//     }
+//     innerFunc('param one')
+// }
+
+// outterFunc('param two')
+
+
+//###########################################################################################################################################
+
+// What is the 'this' keyword and how is it used?
+// It refers to whatever obejct it is directly inside of.   If you went into your browswer and typed console.log(this), it would refer to the global window.
+
+
+let house = {
+    price: 100000,
+    squareFeet: 2000, 
+    owner: 'Taylor', 
+    getPricePerSquareFoot: function() {
+        return this.price / this.squareFeet;  //this refers to the house object
     }
-    displayName();
 }
 
-init("Mozilla")
+console.log(house.price); //100000
+console.log(house.getPricePerSquareFoot()) // 50
 
 
 
 
-const globalVariable = 'global var'
 
-function outterFunc(param1) {
-    const variable1 = "Var one"
 
-    function innerFunc(param2) {
-        const variable2 = "Var two"
-
-        console.log('globalVariable: ', globalVariable);
-        console.log('variable1: ', variable1);
-        console.log('variable2: ', variable2)
-    }
-    innerFunc('param one')
-}
-
-outterFunc('param two')
 
 
 
