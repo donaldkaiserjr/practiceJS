@@ -782,18 +782,35 @@
 // Hoisting - variables and functions are hoisted to the top of the scope that they are declared in  -  BLOCK SCOPE -this is present whenever there is a block of code. 
 
 
-function getTotal() {
+// function getTotal() {
 
-    let total = 0;       // this is hoisted to the top of the function; the function getTotal is the only block that "total" is located in.
+//     let total = 0;       // this is hoisted to the top of the function; the function getTotal is the only block that "total" is located in.
 
-    for(var i = 0; i < 10; i++) {
-        let valueToAdd = i;     //  "valueToAdd" is hoisted to the top of the for Loop, not to the top of the function. 
-        var multiplier = 2;     //   This is hoisted to the top of the function; since the "var" keyword is global scoped, it's not block scoped
-        total += valueToAdd * multiplier;   
+//     for(var i = 0; i < 10; i++) {
+//         let valueToAdd = i;     //  "valueToAdd" is hoisted to the top of the for Loop, not to the top of the function. 
+//         var multiplier = 2;     //   This is hoisted to the top of the function; since the "var" keyword is global scoped, it's not block scoped
+//         total += valueToAdd * multiplier;   
+//     }
+
+//     return total;
+// }
+
+//###########################################################################################################################################
+
+var myCar = {
+    color: "Blue",
+    logColor: function() {
+        var self = this;
+        console.log("In logColor - this.color: " + this.color);
+        console.log("In logColor - self.color: " + self.color);
+        (function() {
+            console.log("In IIFE - this.color: " + this.color);
+            console.log("In IIFE - self.color: " + self.color);
+        })();
     }
-
-    return total;
-}
+};
+ 
+myCar.logColor();
 
 
 
