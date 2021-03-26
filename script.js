@@ -797,30 +797,51 @@
 
 //###########################################################################################################################################
 
-var myCar = {
-    color: "Blue",
-    logColor: function() {
-        var self = this;
-        console.log("In logColor - this.color: " + this.color);     //output:  Blue
-        console.log("In logColor - self.color: " + self.color);     //output:  Blue
-        (function() {
-            console.log("In IIFE - this.color: " + this.color);     // Undefined   Since 'this' can't look outside of the new function. 
-                                                                    // If there were a globabl vairable above the function like this.color = "Blue"
-                                                                    // then the output would show "Blue". This is why it's best to set 'this' to a vairable "self"
+// var myCar = {
+//     color: "Blue",
+//     logColor: function() {
+//         var self = this;
+//         console.log("In logColor - this.color: " + this.color);     //output:  Blue
+//         console.log("In logColor - self.color: " + self.color);     //output:  Blue
+//         (function() {
+//             console.log("In IIFE - this.color: " + this.color);     // Undefined   Since 'this' can't look outside of the new function. 
+//                                                                     // If there were a globabl vairable above the function like this.color = "Blue"
+//                                                                     // then the output would show "Blue". This is why it's best to set 'this' to a vairable "self"
             
-            console.log("In IIFE - self.color: " + self.color);     //output:  Blue
-        })();
-    }
-};
+//             console.log("In IIFE - self.color: " + self.color);     //output:  Blue
+//         })();
+//     }
+// };
  
-myCar.logColor();
+// myCar.logColor();
 
 //###########################################################################################################################################
+//   Extra Hoisting Example - A tricky way hoisting works
+
+var num = 50;
+ 
+function logNumber() {
+    console.log(num);      //Output:  Undefined.......You'd think the output would be 50. look at below function to see it under the hood.
+    var num = 100;
+}
+ 
+logNumber();
 
 
 
 
 
+
+var num = 50;
+ 
+function logNumber() {
+    var num;            //In the above function, 'num' is called at the top of the function here but without the value of 100. 
+                        // The value of 100 only gets assigned where you assigned it at the bottom. Since you console.logged it before
+                        // 100 was assigned, the output is undefined. 
+    console.log(num);      
+    var num = 100;
+}
+ 
 
 
 
