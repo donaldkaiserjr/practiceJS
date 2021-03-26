@@ -818,36 +818,74 @@
 //###########################################################################################################################################
 //   Extra Hoisting Example - A tricky way hoisting works
 
-var num = 50;
+// var num = 50;
  
-function logNumber() {
-    console.log(num);      //Output:  Undefined.......You'd think the output would be 50. look at below function to see it under the hood.
-    var num = 100;
+// function logNumber() {
+//     console.log(num);      //Output:  Undefined.......You'd think the output would be 50. look at below function to see it under the hood.
+//     var num = 100;
+// }
+ 
+// logNumber();
+
+
+
+
+
+
+// var num = 50;
+ 
+// function logNumber() {
+//     var num;            //In the above function, 'num' is called at the top of the function here but without the value of 100. 
+//                         // The value of 100 only gets assigned where you assigned it at the bottom. Since you console.logged it before
+//                         // 100 was assigned, the output is undefined. 
+//     console.log(num);      
+//     var num = 100;
+// }                       // Changing all 'var' elements to 'let' makes the code run correctly.  
+//                         // Var is an ES5 element that still comes up in interviews and companies need programmers to understand elements of ES5
+//                         // Since a lot of older code used this syntax. Programmers need to know the under-the-hood reasons we use "let" and "const"
+ 
+//###########################################################################################################################################
+// Strict Mode  - It's considered best practice to put 'use strict' at the beginning of source code. 
+// Reason: The benefits of using strict mode or 'use strict' is to enforce stricter parsing and error handling in your code
+// 1.  Prevents the use of globabl variables
+// 2.  All parameter names for a function must be unique
+// 3.  Deleting properties that you shouldn't delete
+
+
+// Example 1:
+'use strict'        // Since we forgot to use let or const below, use strict will show and error 'city is not defined,' which is a good thing.
+                    // This saves a lot of bugs as the code becomes larger. 
+
+
+city = "London"    // Notice we forgot to use a keyword like "let" or "const"
+
+console.log(city);  //Output:  London  Undefined.
+
+
+
+// Example 2:
+'use strict'
+
+function myFunc(a, a, b) {
+    console.log(a, a, b);
 }
- 
-logNumber();
+
+myFunc(1, 2, 3) // If 'use strict' is at the top of your code, you'll get an error because in your function, there are two 'a' variables. You want the error.
+                // If 'use strict' wasn't at the top of your code, it would run with no error, even though you have 2 'a' variables... bugs down the line.
+
+
+// Example 3:
+
+
+delete Object.prototype;   // this should never be deleted since its an object constructor that's built into Javascript. 
+                            //  In strict mode, you'd get an error that tells you not to delete this important object. So always use 'strict mode'
+
+                            // Summary: basically, if you're doing something that isn't the best practice, strict mode stops/warns you of the issue.
 
 
 
 
-
-
-var num = 50;
- 
-function logNumber() {
-    var num;            //In the above function, 'num' is called at the top of the function here but without the value of 100. 
-                        // The value of 100 only gets assigned where you assigned it at the bottom. Since you console.logged it before
-                        // 100 was assigned, the output is undefined. 
-    console.log(num);      
-    var num = 100;
-}                       // Changing all 'var' elements to 'let' makes the code run correctly.  
-                        // Var is an ES5 element that still comes up in interviews and companies need programmers to understand elements of ES5
-                        // Since a lot of older code used this syntax. Programmers need to know the under-the-hood reasons we use "let" and "const"
- 
-
-
-
-
+//###########################################################################################################################################
 
 
 
@@ -856,7 +894,6 @@ function logNumber() {
 
 
 
-                        
 //###########################################################################################################################################
 //###########################################################################################################################################
 //https://www.bitdegree.org/learn/javascript-array-methods#javascript-array-methods-main-tips
