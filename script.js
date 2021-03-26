@@ -929,29 +929,48 @@
 // Counter Function  -  Create a function that returns how many times the function was called.
 // One of the best ways to make a function keep track of itself is with a closure.
 
-function myFunc() {
-    let count = 0;
+// function myFunc() {
+//     let count = 0;
 
-    return function() {     //This function is the closure
-        count++;            // You called the count at the top of the first function. Here you just increase the count.
-        return count;       // Simply return the count to see what it is.
-    }
-}
+//     return function() {     //This function is the closure
+//         count++;            // You called the count at the top of the first function. Here you just increase the count.
+//         return count;       // Simply return the count to see what it is.
+//     }
+// }
 
-console.log(myFunc());
+// console.log(myFunc());
 
-const instanceOne = myFunc();
-const instanceTwo = myFunc();
+// const instanceOne = myFunc();
+// const instanceTwo = myFunc();
 
-console.log('instanceOne: ', instanceOne())
-console.log('instanceOne: ', instanceOne())
-console.log('instanceOne: ', instanceOne())
-console.log('instanceOne: ', instanceTwo())
-console.log('instanceTwo: ', instanceTwo())
-console.log('instanceOne: ', instanceOne())
-// Output:  Each time an instance runs, it shows the number of times it ran.
-// Closures are very important. If you wanted to, in myFunc you could place a For Loop that says that count can only be ran 4 times or else
-// an error is thrown. You may want to do this if you only want your function ran a limited number of times.
+// console.log('instanceOne: ', instanceOne())
+// console.log('instanceOne: ', instanceOne())
+// console.log('instanceOne: ', instanceOne())
+// console.log('instanceOne: ', instanceTwo())
+// console.log('instanceTwo: ', instanceTwo())
+// console.log('instanceOne: ', instanceOne())
+// // Output:  Each time an instance runs, it shows the number of times it ran.
+// // Closures are very important. If you wanted to, in myFunc you could place a For Loop that says that count can only be ran 4 times or else
+// // an error is thrown. You may want to do this if you only want your function ran a limited number of times.
+
+//###########################################################################################################################################
+//Logging X and Y :  What is the output of x and what is the output of y in the function below?
+
+(function() {
+    var x = y = 200;
+  })();
+   
+    console.log('y: ', y); // Output:  200   This is because under the hood, you're saying y = 200 with no variable. Thus y is a global variable
+                            // Then you're saying var x = y which makes x non accessible outside if the IFFE function
+                            // IMPORTANT:  if you used 'strict mode' at the top of the file, you'll get the error that y is not defined, which is good.
+    console.log('x: ', x);  // Undefined because you can't access it outside of the IFFE function
+
+
+
+//###########################################################################################################################################
+
+
+
 
 
 
