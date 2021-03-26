@@ -801,17 +801,21 @@ var myCar = {
     color: "Blue",
     logColor: function() {
         var self = this;
-        console.log("In logColor - this.color: " + this.color);
-        console.log("In logColor - self.color: " + self.color);
+        console.log("In logColor - this.color: " + this.color);     //output:  Blue
+        console.log("In logColor - self.color: " + self.color);     //output:  Blue
         (function() {
-            console.log("In IIFE - this.color: " + this.color);
-            console.log("In IIFE - self.color: " + self.color);
+            console.log("In IIFE - this.color: " + this.color);     // Undefined   Since 'this' can't look outside of the new function. 
+                                                                    // If there were a globabl vairable above the function like this.color = "Blue"
+                                                                    // then the output would show "Blue". This is why it's best to set 'this' to a vairable "self"
+            
+            console.log("In IIFE - self.color: " + self.color);     //output:  Blue
         })();
     }
 };
  
 myCar.logColor();
 
+//###########################################################################################################################################
 
 
 
