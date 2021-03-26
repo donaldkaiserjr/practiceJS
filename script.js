@@ -883,13 +883,47 @@ delete Object.prototype;   // this should never be deleted since its an object c
                             // Summary: basically, if you're doing something that isn't the best practice, strict mode stops/warns you of the issue.
 
 
-
-
 //###########################################################################################################################################
+// Curry Function  - To curry a function, you must take a single functin and return more functions
+
+// function getProduct(num1, num2) {
+//     return num1 * num2;                  This is the first function that we will curry below
+// }
+
+function getProduct(num1) {
+    return function(num2) {
+        return num1 * num2
+    };
+}
+
+
+getProduct(10)(20)   // Output: 200
 
 
 
 
+//Example 2    Practical Example of why we'd curry a function. 
+// This function will show us how long it takes to travel any distance at a certain speed. 
+
+function getTravelTime1(distance, speed) {
+    return distance / speed;
+}
+
+getTravelTime1(600, 50);  // Output 12
+// If your distance never changed, meaning it's always 600, and you simply just want to know a different speed, then you'd have to write in
+// 600 each time you call the function.  So the below is why you'd curry this function.  
+
+
+
+function getTravelTime2(distance) {
+    return function(speed) {
+        return distance / speed;
+    }
+}
+
+
+const travelTimeBosNyc = getTravelTime2(400);
+console.log(travelTimeBosNyc(100))  // Output: 4
 
 
 
