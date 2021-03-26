@@ -840,7 +840,9 @@ function logNumber() {
                         // 100 was assigned, the output is undefined. 
     console.log(num);      
     var num = 100;
-}
+}                       // Changing all 'var' elements to 'let' makes the code run correctly.  
+                        // Var is an ES5 element that still comes up in interviews and companies need programmers to understand elements of ES5
+                        // Since a lot of older code used this syntax. Programmers need to know the under-the-hood reasons we use "let" and "const"
  
 
 
@@ -854,11 +856,7 @@ function logNumber() {
 
 
 
-
-
-
-
-
+                        
 //###########################################################################################################################################
 //###########################################################################################################################################
 //https://www.bitdegree.org/learn/javascript-array-methods#javascript-array-methods-main-tips
