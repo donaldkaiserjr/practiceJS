@@ -1,8 +1,8 @@
 /* */
 // Write a function that capitalizes the first and fourth letters of a name
 // function oldMacDonald(name) {
-//     firstLetter = name.charAt(0).toUpperCase() + name.slice(1)  // here you find the first character, then use name.slice(1) to get the entire name without the first character to attach it.
-//     convertedFourth = firstLetter.slice(0,3) + firstLetter.charAt(3).toUpperCase() + firstLetter.slice(4)
+//     firstLetter = name.charAt(0).toUpperCase() + name.slice(1)  // here you find the first character and capitalize it, then use name.slice(1) to get the entire name without the first character to attach it.
+//     convertedFourth = firstLetter.slice(0,3) + firstLetter.charAt(3).toUpperCase() + firstLetter.slice(4)   // here get leters 1, 2 and 3.... then add the 4th letter and uppercase it... then attach all letters after the 4th letter.
 //     return convertedFourth
 // }
 
@@ -852,78 +852,109 @@
 // 3.  Deleting properties that you shouldn't delete
 
 
-// Example 1:
-'use strict'        // Since we forgot to use let or const below, use strict will show and error 'city is not defined,' which is a good thing.
-                    // This saves a lot of bugs as the code becomes larger. 
+// // Example 1:
+// 'use strict'        // Since we forgot to use let or const below, use strict will show and error 'city is not defined,' which is a good thing.
+//                     // This saves a lot of bugs as the code becomes larger. 
 
 
-city = "London"    // Notice we forgot to use a keyword like "let" or "const"
+// city = "London"    // Notice we forgot to use a keyword like "let" or "const"
 
-console.log(city);  //Output:  London  Undefined.
-
-
-
-// Example 2:
-'use strict'
-
-function myFunc(a, a, b) {
-    console.log(a, a, b);
-}
-
-myFunc(1, 2, 3) // If 'use strict' is at the top of your code, you'll get an error because in your function, there are two 'a' variables. You want the error.
-                // If 'use strict' wasn't at the top of your code, it would run with no error, even though you have 2 'a' variables... bugs down the line.
+// console.log(city);  //Output:  London  Undefined.
 
 
-// Example 3:
+
+// // Example 2:
+// 'use strict'
+
+// function myFunc(a, a, b) {
+//     console.log(a, a, b);
+// }
+
+// myFunc(1, 2, 3) // If 'use strict' is at the top of your code, you'll get an error because in your function, there are two 'a' variables. You want the error.
+//                 // If 'use strict' wasn't at the top of your code, it would run with no error, even though you have 2 'a' variables... bugs down the line.
 
 
-delete Object.prototype;   // this should never be deleted since its an object constructor that's built into Javascript. 
-                            //  In strict mode, you'd get an error that tells you not to delete this important object. So always use 'strict mode'
+// // Example 3:
 
-                            // Summary: basically, if you're doing something that isn't the best practice, strict mode stops/warns you of the issue.
+
+// delete Object.prototype;   // this should never be deleted since its an object constructor that's built into Javascript. 
+//                             //  In strict mode, you'd get an error that tells you not to delete this important object. So always use 'strict mode'
+
+//                             // Summary: basically, if you're doing something that isn't the best practice, strict mode stops/warns you of the issue.
 
 
 //###########################################################################################################################################
-// Curry Function  - To curry a function, you must take a single functin and return more functions
+// // Curry Function  - To curry a function, you must take a single functin and return more functions
 
-// function getProduct(num1, num2) {
-//     return num1 * num2;                  This is the first function that we will curry below
+// // function getProduct(num1, num2) {
+// //     return num1 * num2;                  This is the first function that we will curry below
+// // }
+
+// function getProduct(num1) {
+//     return function(num2) {
+//         return num1 * num2
+//     };
 // }
 
-function getProduct(num1) {
-    return function(num2) {
-        return num1 * num2
-    };
-}
 
-
-getProduct(10)(20)   // Output: 200
+// getProduct(10)(20)   // Output: 200
 
 
 
 
-//Example 2    Practical Example of why we'd curry a function. 
-// This function will show us how long it takes to travel any distance at a certain speed. 
+// //Example 2    Practical Example of why we'd curry a function. 
+// // This function will show us how long it takes to travel any distance at a certain speed. 
 
-function getTravelTime1(distance, speed) {
-    return distance / speed;
-}
+// function getTravelTime1(distance, speed) {
+//     return distance / speed;
+// }
 
-getTravelTime1(600, 50);  // Output 12
-// If your distance never changed, meaning it's always 600, and you simply just want to know a different speed, then you'd have to write in
-// 600 each time you call the function.  So the below is why you'd curry this function.  
+// getTravelTime1(600, 50);  // Output 12
+// // If your distance never changed, meaning it's always 600, and you simply just want to know a different speed, then you'd have to write in
+// // 600 each time you call the function.  So the below is why you'd curry this function.  
 
 
 
-function getTravelTime2(distance) {
-    return function(speed) {
-        return distance / speed;
+// function getTravelTime2(distance) {
+//     return function(speed) {
+//         return distance / speed;
+//     }
+// }
+
+
+// const travelTimeBosNyc = getTravelTime2(400);
+// console.log(travelTimeBosNyc(100))  // Output: 4
+
+//###########################################################################################################################################
+// Counter Function  -  Create a function that returns how many times the function was called.
+// One of the best ways to make a function keep track of itself is with a closure.
+
+function myFunc() {
+    let count = 0;
+
+    return function() {     //This function is the closure
+        count++;            // You called the count at the top of the first function. Here you just increase the count.
+        return count;       // Simply return the count to see what it is.
     }
 }
 
+console.log(myFunc());
 
-const travelTimeBosNyc = getTravelTime2(400);
-console.log(travelTimeBosNyc(100))  // Output: 4
+const instanceOne = myFunc();
+const instanceTwo = myFunc();
+
+console.log('instanceOne: ', instanceOne())
+console.log('instanceOne: ', instanceOne())
+console.log('instanceOne: ', instanceOne())
+console.log('instanceOne: ', instanceTwo())
+console.log('instanceTwo: ', instanceTwo())
+console.log('instanceOne: ', instanceOne())
+// Output:  Each time an instance runs, it shows the number of times it ran.
+// Closures are very important. If you wanted to, in myFunc you could place a For Loop that says that count can only be ran 4 times or else
+// an error is thrown. You may want to do this if you only want your function ran a limited number of times.
+
+
+
 
 
 
