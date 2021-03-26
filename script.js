@@ -1,7 +1,4 @@
 /* */
-
-
-
 // Write a function that capitalizes the first and fourth letters of a name
 // function oldMacDonald(name) {
 //     firstLetter = name.charAt(0).toUpperCase() + name.slice(1)  // here you find the first character, then use name.slice(1) to get the entire name without the first character to attach it.
@@ -29,12 +26,6 @@
 // }
 // console.log(lesserOfTwoEvens(99,255))
 //###########################################################################################################################################
-
-
-
-
-
-
 
 // Write a program that outputs the string representation of numbers from 1 to n.
 
@@ -73,10 +64,6 @@
 // console.log(output);
 
 //###########################################################################################################################################
-
-
-
-
 
 // 1. Write a JavaScript function to check whether an `input` is an array or not. Go to the editor
 // Test Data :
@@ -122,6 +109,7 @@
 
 
 
+
 // var points = ["Nate", "Bro", "Tim"]
 
 
@@ -139,10 +127,6 @@
 
 // sortAlphabetically()
 // sortNumerically()
-
-
-
-
 
 
 
@@ -202,6 +186,10 @@
 
 // let years = Math.max.apply(null, [1950, 1960, 1970, 1980, 1990, 2000, 2010])
 // console.log(years)
+
+
+
+
 
 
 
@@ -332,8 +320,6 @@
 
 // let locateWord = paragraph.lastIndexOf("as")
 // console.log(locateWord)  // Output:  171
-
-
 
 
 // let wordsInArray = ["devil", "angel", "God", "baby", "man", "child", "good", "evil"]
@@ -783,13 +769,48 @@
 
 
 
-console.log(thisFunction(8, 9))  // This works fine and returns 17.  This is because thisFunction is a function declaration. 
-// Function declarations are useful because they make hoisting easier.
+// console.log(thisFunction(8, 9))  // This works fine and returns 17.  This is because thisFunction is a function declaration. 
+// // Function declarations are useful because they make hoisting easier.
 
 
-function thisFunction(num1, num2) {
-    return num1 + num2
+// function thisFunction(num1, num2) {
+//     return num1 + num2
+// }
+
+//###########################################################################################################################################
+
+// Hoisting - variables and functions are hoisted to the top of the scope that they are declared in  -  BLOCK SCOPE -this is present whenever there is a block of code. 
+
+
+function getTotal() {
+
+    let total = 0;       // this is hoisted to the top of the function; the function getTotal is the only block that "total" is located in.
+
+    for(var i = 0; i < 10; i++) {
+        let valueToAdd = i;     //  "valueToAdd" is hoisted to the top of the for Loop, not to the top of the function. 
+        var multiplier = 2;     //   This is hoisted to the top of the function; since the "var" keyword is global scoped, it's not block scoped
+        total += valueToAdd * multiplier;   
+    }
+
+    return total;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
