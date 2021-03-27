@@ -1074,23 +1074,39 @@
 // It's a light-weight format for transferring data  (API's etc.)
 // All object properties must be wrapped in quotes like below. 
 
-const myJsonObj2 = {
-    "myString": 'Goulash Bread',
-    "myNumber": 9999,
-    "myNull": null,
-    "myBoolean": false,
-    //myUndefined: [undefined],                     // NOT ALLOWED. UNDEFINED IS NOT ALLOWED IN JSON
-    "myArray": ['item1', 'item2', 'item3'],
-    //myFunction: ['FUNCTIONS NOT ALLOWED'],        //NOT ALLOWED. FUNCTIONS ARE NOT ALLOWED IN JSON
-                                                    // JSON doesn't need functions since it's a data description language. 
-                                                    // It's only function is to pass data
-    "myObject": {
-        "name": "Sam",                                        //
-        "age": 30
-    }
-  };
+// const myJsonObj2 = {
+//     "myString": 'Goulash Bread',
+//     "myNumber": 9999,
+//     "myNull": null,
+//     "myBoolean": false,
+//     //myUndefined: [undefined],                     // NOT ALLOWED. UNDEFINED IS NOT ALLOWED IN JSON
+//     "myArray": ['item1', 'item2', 'item3'],
+//     //myFunction: ['FUNCTIONS NOT ALLOWED'],        //NOT ALLOWED. FUNCTIONS ARE NOT ALLOWED IN JSON
+//                                                     // JSON doesn't need functions since it's a data description language. 
+//                                                     // It's only function is to pass data
+//     "myObject": {
+//         "name": "Sam",                                        //
+//         "age": 30
+//     }
+//   };
+//###########################################################################################################################################
+// In the function below, what order will the numbers be logged out in?
 
 
+function logNumbers() {
+    console.log(1); 
+    setTimeout(function(){console.log(2)}, 1000); 
+    setTimeout(function(){console.log(3)}, 0); 
+    console.log(4);
+  }
+   
+  logNumbers();
+
+
+
+// Output will be:   1, 4, 3, 2
+
+//###########################################################################################################################################
 
 
 
