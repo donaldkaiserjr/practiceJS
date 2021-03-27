@@ -1018,28 +1018,48 @@
 //###########################################################################################################################################
 // Question 1: What will list 2 contain when it's printed out to the console?
 
-const list1 = [1, 2, 3, 4, 5];
-const list2 = list1;
+// const list1 = [1, 2, 3, 4, 5];
+// const list2 = list1;
  
-list1.push(6, 7, 8);
+// list1.push(6, 7, 8);
  
-// console.log(list2);
+// // console.log(list2);
 
 
 
-// Question 2: How can we set list02 equal to an array that has the same value as list1 without actually referencing the same 
-// underlying array that list one does?   Answer:  Make a copy of list1 and assign it to list2. This way we have 2 arrays of the same value
-// But they are completely separate. So updating one wont affect the other.
+// // Question 2: How can we set list02 equal to an array that has the same value as list1 without actually referencing the same 
+// // underlying array that list one does?   Answer:  Make a copy of list1 and assign it to list2. This way we have 2 arrays of the same value
+// // But they are completely separate. So updating one wont affect the other.
 
-const list01 = [1, 2, 3, 4, 5];
-const list02 = list1.slice();    // this copies all of the elements in list one and returns them as an array.
-// we can also use the concat method:    const list02 = list01.concat([])
+// const list01 = [1, 2, 3, 4, 5];
+// const list02 = list1.slice();    // this copies all of the elements in list one and returns them as an array.
+// // we can also use the concat method:    const list02 = list01.concat([])
 
-list1.push(6, 7, 8);
+// list1.push(6, 7, 8);
  
-console.log(list02);
+// console.log(list02);
+//###########################################################################################################################################
+// Make a function that can be either singly invoked (2 numbers passed in as arguments) or doubly invoked with each invocation taking a single
+// number (which is the same as currying a function)
 
+// use the 'arguments' keyword (similar to *args in Python). 
 
+function getTotal() {
+    let args = Array.prototype.slice.call(arguments)   // this turns the arguments into an array
+    
+    if (args.length === 2) {
+        return args[0] + args[1]
+    }
+    else if (args.length === 1) {
+        return function(num2) {
+            return args[0] + num2
+        }
+    }
+
+};
+
+console.log(getTotal(3)(30)); // Output: 33
+console.log(getTotal(25, 40)) // Output:  65
 
 
 
