@@ -956,21 +956,63 @@
 //###########################################################################################################################################
 //Logging X and Y :  What is the output of x and what is the output of y in the function below?
 
-(function() {
-    var x = y = 200;
-  })();
+// (function() {
+//     var x = y = 200;
+//   })();
    
-    console.log('y: ', y); // Output:  200   This is because under the hood, you're saying y = 200 with no variable. Thus y is a global variable
-                            // Then you're saying var x = y which makes x non accessible outside if the IFFE function
-                            // IMPORTANT:  if you used 'strict mode' at the top of the file, you'll get the error that y is not defined, which is good.
-    console.log('x: ', x);  // Undefined because you can't access it outside of the IFFE function
+//     console.log('y: ', y); // Output:  200   This is because under the hood, you're saying y = 200 with no variable. Thus y is a global variable
+//                             // Then you're saying var x = y which makes x non accessible outside if the IFFE function
+//                             // IMPORTANT:  if you used 'strict mode' at the top of the file, you'll get the error that y is not defined, which is good.
+//     console.log('x: ', x);  // Undefined because you can't access it outside of the IFFE function
 
 
 
 //###########################################################################################################################################
+// What are Call and Apply methods?  How do they function?  How are they different?   Very Important concept.
+
+// call()     Any function that you define in JS can use the call method
+// The call method gives you an alternative way to call your functions instead of the normal way we call functions. 
 
 
 
+// ---------CALL METHOD------
+'use strict'
+
+
+const car1 = {
+    brand: 'Porche',
+    getCarDescription: function(cost, year, color) {    // this line is a method (similar to Python methods inside of Classes)
+        console.log(`This car is a ${this.brand}. The price is $${cost}. The \
+        year is ${year}. The color is ${color}.\n`);
+    }
+}
+
+
+const car2 = {
+    brand: 'Lamborghini'
+};
+
+
+car1.getCarDescription(80000, 2010, 'blue');   //normal way to call the function. Gives you the correct info in the output.
+
+// With the call method, you can change what the "this" is in the getCarDescription above....
+
+//USing the Call method
+car1.getCarDescription.call(car2, 2000000, 2013, 'yellow')
+// Here you called car1, then in the parenthesis you passed in car2 as the 'this context. Then you just pass in the rest of the arguments that 
+// getCarDescription takes (cost, year, color)
+
+
+// --------APPLY METHOD------
+// Apply is basically the same as the Call method with one major difference: when passiging in paramaters, you pass them in as an array.
+
+const car3 = {
+    brand: 'Ford'
+}
+
+
+car1.getCarDescription.apply(car3, [35000], 2012, 'black');
+// So when choosing whether to use call or apply, it depends on if you need to pass in an array or not when calling a function.
 
 
 
