@@ -1044,22 +1044,54 @@
 
 // use the 'arguments' keyword (similar to *args in Python). 
 
-function getTotal() {
-    let args = Array.prototype.slice.call(arguments)   // this turns the arguments into an array
+// function getTotal() {
+//     let args = Array.prototype.slice.call(arguments)   // this turns the arguments into an array
     
-    if (args.length === 2) {
-        return args[0] + args[1]
-    }
-    else if (args.length === 1) {
-        return function(num2) {
-            return args[0] + num2
-        }
-    }
+//     if (args.length === 2) {
+//         return args[0] + args[1]
+//     }
+//     else if (args.length === 1) {
+//         return function(num2) {
+//             return args[0] + num2
+//         }
+//     }
 
-};
+// };
 
-console.log(getTotal(3)(30)); // Output: 33
-console.log(getTotal(25, 40)) // Output:  65
+// console.log(getTotal(3)(30)); // Output: 33
+// console.log(getTotal(25, 40)) // Output:  65
+//###########################################################################################################################################
+// JSON DATA
+
+// TASK:
+// 1. Describe what JSON format is.    
+// 2. Delete the data types not permitted in JSON.
+// 3. Replace placeholder-text with the corresponding data type,
+//    properly formatted as JSON.
+
+
+//JSON stands for Javascript Object Notation
+// It's a light-weight format for transferring data  (API's etc.)
+// All object properties must be wrapped in quotes like below. 
+
+const myJsonObj2 = {
+    "myString": 'Goulash Bread',
+    "myNumber": 9999,
+    "myNull": null,
+    "myBoolean": false,
+    //myUndefined: [undefined],                     // NOT ALLOWED. UNDEFINED IS NOT ALLOWED IN JSON
+    "myArray": ['item1', 'item2', 'item3'],
+    //myFunction: ['FUNCTIONS NOT ALLOWED'],        //NOT ALLOWED. FUNCTIONS ARE NOT ALLOWED IN JSON
+                                                    // JSON doesn't need functions since it's a data description language. 
+                                                    // It's only function is to pass data
+    "myObject": {
+        "name": "Sam",                                        //
+        "age": 30
+    }
+  };
+
+
+
 
 
 
