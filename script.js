@@ -1111,60 +1111,71 @@
 
 
 // 1.) Object literal syntax:   The most common way to create JS objects.
-const myBoat = {
-    length: 24, 
-    maxSpeed: 45, 
-    passengers: 14, 
-    getLength: function() {
-        return this.length;
-    }
+// const myBoat = {
+//     length: 24, 
+//     maxSpeed: 45, 
+//     passengers: 14, 
+//     getLength: function() {
+//         return this.length;
+//     }
 
-}
-
-
-// 2.) new keyword 
-const student = new Object();   //student is now an empty object
-
-student.grade = 12;
-student.gradePointAverage = 3.7;
-student.classes = ["English", "Algebra", "Chemistry"];
-
-student.getClasses = function() {     //Object literals are preferred over the object constructor method
-    return this.classes
-}
+// }
 
 
-// 3.) constructor function  (in python this would be a Class)     This is the most complex way to create an object
-function Car(color, brand, year) {
-    this.color = color;
-    this.brand = brand;
-    this.year = year;
-  }
+// // 2.) new keyword 
+// const student = new Object();   //student is now an empty object
+
+// student.grade = 12;
+// student.gradePointAverage = 3.7;
+// student.classes = ["English", "Algebra", "Chemistry"];
+
+// student.getClasses = function() {     //Object literals are preferred over the object constructor method
+//     return this.classes
+// }
+
+
+// // 3.) constructor function  (in python this would be a Class)     This is the most complex way to create an object
+// function Car(color, brand, year) {
+//     this.color = color;
+//     this.brand = brand;
+//     this.year = year;
+//   }
    
-  Car.prototype.getColor = function() {
-    return this.color;
-  };
+//   Car.prototype.getColor = function() {
+//     return this.color;
+//   };
    
-  const carlysCar = new Car('blue', 'ferarri', 2015);
-  const jimsCar = new Car('red', 'tesla', 2014);
+//   const carlysCar = new Car('blue', 'ferarri', 2015);
+//   const jimsCar = new Car('red', 'tesla', 2014);
   
 
-// Constructor functions create an object class and allwows you to create multiple instances of that class easily. They allow you to create many objects
-// very quickly. These objects are a part of the same class.  
+// // Constructor functions create an object class and allwows you to create multiple instances of that class easily. They allow you to create many objects
+// // very quickly. These objects are a part of the same class.  
 
-// Facebook has over 1 billion users. They all share the same class and have the same properties of user, username, etc.
+// // Facebook has over 1 billion users. They all share the same class and have the same properties of user, username, etc.
 
-function User(firstName, lastName, age, gender) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.gender = gender;
-}
+// function User(firstName, lastName, age, gender) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.gender = gender;
+// }
 
-var user1 = new User('John', 'Smith', 26, 'male');    //remember to write 'new' in order to create a new object.
-var user200 = new User('Joe', "Samari", 25, 'male')
+// var user1 = new User('John', 'Smith', 26, 'male');    //remember to write 'new' in order to create a new object.
+// var user200 = new User('Joe', "Samari", 25, 'male')
 
 //###########################################################################################################################################
+// Typeof
+// What will be logged out in the following code:
+console.log(typeof null);           //Output:  object
+console.log(typeof undefined);      //Output:  undefined
+console.log(typeof {});             //Output:  object
+console.log(typeof []);             //Output:  object
+
+
+
+
+
 
 
 //###########################################################################################################################################
