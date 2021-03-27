@@ -976,43 +976,69 @@
 
 
 // ---------CALL METHOD------
-'use strict'
+// 'use strict'
 
 
-const car1 = {
-    brand: 'Porche',
-    getCarDescription: function(cost, year, color) {    // this line is a method (similar to Python methods inside of Classes)
-        console.log(`This car is a ${this.brand}. The price is $${cost}. The \
-        year is ${year}. The color is ${color}.\n`);
-    }
-}
+// const car1 = {
+//     brand: 'Porche',
+//     getCarDescription: function(cost, year, color) {    // this line is a method (similar to Python methods inside of Classes)
+//         console.log(`This car is a ${this.brand}. The price is $${cost}. The \
+//         year is ${year}. The color is ${color}.\n`);
+//     }
+// }
 
 
-const car2 = {
-    brand: 'Lamborghini'
-};
+// const car2 = {
+//     brand: 'Lamborghini'
+// };
 
 
-car1.getCarDescription(80000, 2010, 'blue');   //normal way to call the function. Gives you the correct info in the output.
+// car1.getCarDescription(80000, 2010, 'blue');   //normal way to call the function. Gives you the correct info in the output.
 
-// With the call method, you can change what the "this" is in the getCarDescription above....
+// // With the call method, you can change what the "this" is in the getCarDescription above....
 
-//USing the Call method
-car1.getCarDescription.call(car2, 2000000, 2013, 'yellow')
-// Here you called car1, then in the parenthesis you passed in car2 as the 'this context. Then you just pass in the rest of the arguments that 
-// getCarDescription takes (cost, year, color)
-
-
-// --------APPLY METHOD------
-// Apply is basically the same as the Call method with one major difference: when passiging in paramaters, you pass them in as an array.
-
-const car3 = {
-    brand: 'Ford'
-}
+// //USing the Call method
+// car1.getCarDescription.call(car2, 2000000, 2013, 'yellow')
+// // Here you called car1, then in the parenthesis you passed in car2 as the 'this context. Then you just pass in the rest of the arguments that 
+// // getCarDescription takes (cost, year, color)
 
 
-car1.getCarDescription.apply(car3, [35000], 2012, 'black');
-// So when choosing whether to use call or apply, it depends on if you need to pass in an array or not when calling a function.
+// // --------APPLY METHOD------
+// // Apply is basically the same as the Call method with one major difference: when passiging in paramaters, you pass them in as an array.
+
+// const car3 = {
+//     brand: 'Ford'
+// }
+
+
+// car1.getCarDescription.apply(car3, [35000], 2012, 'black');
+// // So when choosing whether to use call or apply, it depends on if you need to pass in an array or not when calling a function.
+
+
+//###########################################################################################################################################
+// Question 1: What will list 2 contain when it's printed out to the console?
+
+const list1 = [1, 2, 3, 4, 5];
+const list2 = list1;
+ 
+list1.push(6, 7, 8);
+ 
+// console.log(list2);
+
+
+
+// Question 2: How can we set list02 equal to an array that has the same value as list1 without actually referencing the same 
+// underlying array that list one does?   Answer:  Make a copy of list1 and assign it to list2. This way we have 2 arrays of the same value
+// But they are completely separate. So updating one wont affect the other.
+
+const list01 = [1, 2, 3, 4, 5];
+const list02 = list1.slice();    // this copies all of the elements in list one and returns them as an array.
+// we can also use the concat method:    const list02 = list01.concat([])
+
+list1.push(6, 7, 8);
+ 
+console.log(list02);
+
 
 
 
