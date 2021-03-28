@@ -1167,10 +1167,50 @@
 //###########################################################################################################################################
 // Typeof
 // What will be logged out in the following code:
-console.log(typeof null);           //Output:  object
-console.log(typeof undefined);      //Output:  undefined
-console.log(typeof {});             //Output:  object
-console.log(typeof []);             //Output:  object
+// console.log(typeof null);           //Output:  object
+// console.log(typeof undefined);      //Output:  undefined
+// console.log(typeof {});             //Output:  object
+// console.log(typeof []);             //Output:  object
+
+//###########################################################################################################################################
+// The Bind Method     bind()   What is it, what parameters does it take, how is it used.
+
+// the bind method allows you to bind with the 'this' function
+
+
+
+
+
+//###########################################################################################################################################
+// Using the const variable and also the ternary operator (?)
+//https://medium.com/dailyjs/use-const-and-make-your-javascript-code-better-aac4f3786ca1
+
+
+const foo = something() || defaultValue
+
+let defaultValue = "pepper"
+
+function something() {
+    return "butter is the nastiest thing I've ever tasted!!!"
+}
+
+console.log(foo)
+
+
+
+
+
+
+
+function getFee(vonsClubCard) {
+    const isMember = vonsClubCard ? "your fee is only $2.00" : "Your fee is $10.00"  //using const w/ ternary operator is better than if/else statement
+    return isMember
+}
+
+console.log(getFee(false))  //Output:  Your fee is $10.00
+
+
+
 
 
 
@@ -1185,3 +1225,7 @@ console.log(typeof []);             //Output:  object
 
 
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/discuss/?currentPage=1&orderBy=hot&query=&tag=javascript
+
+
+
+
