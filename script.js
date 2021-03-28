@@ -10,6 +10,12 @@
 // goulash = oldMacDonald('macdonald')
 // console.log(goulash)
 
+
+
+
+
+
+
 //###########################################################################################################################################
 
 //LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even, but returns the greater if one or both numbers are odd¶
@@ -25,6 +31,14 @@
 //     }
 // }
 // console.log(lesserOfTwoEvens(99,255))
+
+
+
+
+
+
+
+
 //###########################################################################################################################################
 
 // Write a program that outputs the string representation of numbers from 1 to n.
@@ -454,6 +468,12 @@
 
 
 
+
+
+
+
+
+
 //###########################################################################################################################################
 // let nums = [10, 30, 50, 70];
 
@@ -464,6 +484,15 @@
 // function mapFunction(){
 //     document.getElementById("result").innerHTML = nums.map(multiplyElements);
 // }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -482,6 +511,11 @@
 //     document.getElementById("result").innerHTML = people.map(getNameAge);
 // }
 
+
+
+
+
+
 //###########################################################################################################################################
 
 // reduce() function built-in JS
@@ -495,6 +529,13 @@
 // function sampleFunction() {
 //     document.getElementById("sampleForm").submit();
 //   }
+
+
+
+
+
+
+
 
 
 
@@ -536,6 +577,12 @@
 // console.log(goulash2)
 
 
+
+
+
+
+
+
 //###########################################################################################################################################
 
 //Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.
@@ -559,6 +606,11 @@
 // }   
 // nums.splice(countUniqueValues)      // Before return result array, use splice to delete rest of filtered values
 // console.log(nums)
+
+
+
+
+
 
 
 
@@ -624,6 +676,11 @@
 // console.log(nums)
 
 
+
+
+
+
+
 //###########################################################################################################################################
 // Write a function called Triple add that returns the total of all numbers added together
 // Example:    tripleAdd(10)(20)(30)   Output:  60
@@ -637,6 +694,9 @@
 // }
 
 // tripleAdd(10)(20)(30); //return total of all 3 of these numbers
+
+
+
 
 
 
@@ -670,6 +730,14 @@
     
 //   })();
   
+
+
+
+
+
+
+
+
 //###########################################################################################################################################
 
 // //Look at the code shown. It adds five buttons to the screen. What will be alerted to the screen when you click button 5 and why? 
@@ -687,6 +755,11 @@
 //  }
   
 //  createButtons();
+
+
+
+
+
 
 
 
@@ -728,6 +801,12 @@
 // outterFunc('param two')
 
 
+
+
+
+
+
+
 //###########################################################################################################################################
 
 // What is the 'this' keyword and how is it used?
@@ -745,6 +824,11 @@
 
 // console.log(house.price); //100000
 // console.log(house.getPricePerSquareFoot()) // 50
+
+
+
+
+
 
 
 //###########################################################################################################################################
@@ -776,6 +860,13 @@
 // function thisFunction(num1, num2) {
 //     return num1 + num2
 // }
+
+
+
+
+
+
+
 
 //###########################################################################################################################################
 
@@ -815,6 +906,12 @@
  
 // myCar.logColor();
 
+
+
+
+
+
+
 //###########################################################################################################################################
 //   Extra Hoisting Example - A tricky way hoisting works
 
@@ -844,6 +941,14 @@
 //                         // Var is an ES5 element that still comes up in interviews and companies need programmers to understand elements of ES5
 //                         // Since a lot of older code used this syntax. Programmers need to know the under-the-hood reasons we use "let" and "const"
  
+
+
+
+
+
+
+
+
 //###########################################################################################################################################
 // Strict Mode  - It's considered best practice to put 'use strict' at the beginning of source code. 
 // Reason: The benefits of using strict mode or 'use strict' is to enforce stricter parsing and error handling in your code
@@ -881,6 +986,13 @@
 //                             //  In strict mode, you'd get an error that tells you not to delete this important object. So always use 'strict mode'
 
 //                             // Summary: basically, if you're doing something that isn't the best practice, strict mode stops/warns you of the issue.
+
+
+
+
+
+
+
 
 
 //###########################################################################################################################################
@@ -925,6 +1037,13 @@
 // const travelTimeBosNyc = getTravelTime2(400);
 // console.log(travelTimeBosNyc(100))  // Output: 4
 
+
+
+
+
+
+
+
 //###########################################################################################################################################
 // Counter Function  -  Create a function that returns how many times the function was called.
 // One of the best ways to make a function keep track of itself is with a closure.
@@ -952,6 +1071,12 @@
 // // Output:  Each time an instance runs, it shows the number of times it ran.
 // // Closures are very important. If you wanted to, in myFunc you could place a For Loop that says that count can only be ran 4 times or else
 // // an error is thrown. You may want to do this if you only want your function ran a limited number of times.
+
+
+
+
+
+
 
 //###########################################################################################################################################
 //Logging X and Y :  What is the output of x and what is the output of y in the function below?
@@ -1015,6 +1140,12 @@
 // // So when choosing whether to use call or apply, it depends on if you need to pass in an array or not when calling a function.
 
 
+
+
+
+
+
+
 //###########################################################################################################################################
 // Question 1: What will list 2 contain when it's printed out to the console?
 
@@ -1038,6 +1169,14 @@
 // list1.push(6, 7, 8);
  
 // console.log(list02);
+
+
+
+
+
+
+
+
 //###########################################################################################################################################
 // Make a function that can be either singly invoked (2 numbers passed in as arguments) or doubly invoked with each invocation taking a single
 // number (which is the same as currying a function)
@@ -1089,6 +1228,14 @@
 //         "age": 30
 //     }
 //   };
+
+
+
+
+
+
+
+
 //###########################################################################################################################################
 // In the function below, what order will the numbers be logged out in?
 
@@ -1105,6 +1252,11 @@
 
 
 // Output will be:   1, 4, 3, 2
+
+
+
+
+
 
 //###########################################################################################################################################
 // List and describe 3 different ways of creating an object in JS
@@ -1168,6 +1320,8 @@
 
 
 
+
+
 //###########################################################################################################################################
 // Typeof
 // What will be logged out in the following code:
@@ -1181,7 +1335,9 @@
 
 
 
+
 //###########################################################################################################################################
+
 // The Bind Method     bind()   What is it, what parameters does it take, how is it used.
 
 // the bind method allows you to bind with the 'this' function. It also allows you to define parameters like in Example 3 below.
@@ -1243,6 +1399,10 @@
 
 // console.log(getTripDistance(' left to go'))  //Output:  5000-km left to go
 
+
+
+
+
 //###########################################################################################################################################
 // What is the output for the two console.log expressions below:
 
@@ -1286,6 +1446,10 @@
 // These both log out true because person1 and person2 reference the same object.  Whereas in the first example, there were 2 objects not 1. 
 
 
+
+
+
+
 //###########################################################################################################################################
 // Array Constructor
 // What is logged out for each of the below statements?
@@ -1306,19 +1470,51 @@
 
 
 
+
+
+
 //###########################################################################################################################################
 // Array IndexOf     What gets logged out to the screen with the console.logs below?
 
 
-console.log([10, 20, 30, 40, 50].indexOf(30));
-consoel.log([{name: 'Pam'}, {name: 'kent'}].indexOf({name: 'Kent'})) // -1   It's not found in our array at all.
-                                                                    // This is because 2 objects are never the same in JS. Different ojbects in memory.
-console.log('hello world'.indexOf('o'))  //4  Because it's 4 in the the string.  indexOf can be for arrays or strings
-console.log([[1], [2], [3], [4]].indexOf[2]) // -1  two different arrays are never the same just like objects 
+// console.log([10, 20, 30, 40, 50].indexOf(30));
+// consoel.log([{name: 'Pam'}, {name: 'kent'}].indexOf({name: 'Kent'})) // -1   It's not found in our array at all.
+//                                                                     // This is because 2 objects are never the same in JS. Different ojbects in memory.
+// console.log('hello world'.indexOf('o'))  //4  Because it's 4 in the the string.  indexOf can be for arrays or strings
+// console.log([[1], [2], [3], [4]].indexOf[2]) // -1  two different arrays are never the same just like objects 
 
 
 
 
+
+
+
+
+
+//###########################################################################################################################################
+
+// Equivalent Numbers 
+
+
+//What is logged out here?
+console.log(900.9 === 300.3 * 3); 
+
+
+
+
+// the reason the logged out is false is because JS treats decimal numbers unequally in the Unicode
+// in JS, 300.3 * 3 equals 900.000000000001. To get around this you'd do the following:
+
+(300.3 * 3).toFixed(2)  // Now the result will have 2 decimal digitis but the problem is that the result will be a string. 
+// To fix this we can do 1 of 3 things:
+
+Number((300.3 * 3).toFixed(2)) 
+
+(300.3 * 3).toPrecision(12);  // digits including non decimal portion will not exceed 12.  But this will become a string....
+NUmber(300.3 * 3).toPrecision(12) // Now it's a number
+
+
+((300.3 * 10) * 3) / 10;  // This is the mathmatical way of doing the above solutions.
 
 
 
