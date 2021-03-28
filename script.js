@@ -1290,23 +1290,32 @@
 // Array Constructor
 // What is logged out for each of the below statements?
 
-'use strict'
+// 'use strict'
 
-var arr1 = []
-var arr2 = new Array(50);
-var arr3 = new Array(1, 2, "three", 4, "five")
-var arr4 = new Array([1, 2, 3, 4, 5]);
+// var arr1 = []
+// var arr2 = new Array(50);
+// var arr3 = new Array(1, 2, "three", 4, "five")
+// var arr4 = new Array([1, 2, 3, 4, 5]);
 
-console.log('arr1: ', arr1);
-console.log('arr2: ', arr2);
-console.log('arr3: ', arr3);
-console.log('arr4: ', arr4);
+// console.log('arr1: ', arr1);
+// console.log('arr2: ', arr2);
+// console.log('arr3: ', arr3);
+// console.log('arr4: ', arr4);
 
 // Everthing above is pretty self-explanatory except arr2. output: <50 empty items> This one will have a length of 50. Meaning it's set up to have 50 items.
 
 
 
 //###########################################################################################################################################
+// Array IndexOf     What gets logged out to the screen with the console.logs below?
+
+
+console.log([10, 20, 30, 40, 50].indexOf(30));
+consoel.log([{name: 'Pam'}, {name: 'kent'}].indexOf({name: 'Kent'})) // -1   It's not found in our array at all.
+                                                                    // This is because 2 objects are never the same in JS. Different ojbects in memory.
+console.log('hello world'.indexOf('o'))  //4  Because it's 4 in the the string.  indexOf can be for arrays or strings
+console.log([[1], [2], [3], [4]].indexOf[2]) // -1  two different arrays are never the same just like objects 
+
 
 
 
