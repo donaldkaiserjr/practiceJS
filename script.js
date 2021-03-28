@@ -1243,6 +1243,58 @@
 
 // console.log(getTripDistance(' left to go'))  //Output:  5000-km left to go
 
+//###########################################################################################################################################
+// What is the output for the two console.log expressions below:
+
+
+const user1 = {
+    name: 'Jordan',         // Hint:  user1 is a different object than user2
+    age: 28,
+  };
+   
+  const user2 = {
+    name: 'Jordan',         // Hint:  same info as user1 but completely different object.
+    age: 28,
+  };
+
+
+
+console.log(user1 == user2);    //Can 2 different OBJECTS reference 1 object in memory?
+console.log(user1 === user2);
+
+console.log(JSON.stringify(user1) === JSON.stringify(user2));  // true:  To get true as the output you made these 2 JSON data types...strings.
+
+
+// Both outputs above are false. Why?  Because 2 objects are never equal to each other. 
+// This is because both variables (user1 and user2) are referencing different objects in memory.
+// Because these 2 objects are totally separate, they're never equal to each other. Even if they have all the same properties
+
+
+
+
+// If however, you did the following, it would be true:
+
+const person1 = {
+    name: 'James',
+    age: 48,
+}
+
+const person2 = person1;      // Notice person2 isn't an object. It's simply referencing another object: person1.
+
+console.log(person1 == person2)
+console.log(person1 === person2) 
+// These both log out true because person1 and person2 reference the same object.  Whereas in the first example, there were 2 objects not 1. 
+//###########################################################################################################################################
+
+
+
+
+
+
+
+
+
+
 
 
 //###########################################################################################################################################
