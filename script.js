@@ -1181,51 +1181,69 @@
 
 
 
+
+
+
+
+
+
+
 //###########################################################################################################################################
 // Using the const variable and also the ternary operator (?)
 //https://medium.com/dailyjs/use-const-and-make-your-javascript-code-better-aac4f3786ca1
 
 
-const foo = something() || defaultValue
+// const foo = something() || defaultValue
 
-let defaultValue = "pepper"
+// let defaultValue = "pepper"
 
-function something() {
-    return "butter is the nastiest thing I've ever tasted!!!"
+// function something() {
+//     return "butter is the nastiest thing I've ever tasted!!!"
+// }
+
+// console.log(foo)
+
+
+
+
+
+
+
+// function getFee(vonsClubCard) {
+//     const isMember = vonsClubCard ? "your fee is only $2.00" : "Your fee is $10.00"  //using const w/ ternary operator is better than if/else statement
+//     return isMember
+// }
+
+// console.log(getFee(false))  //Output:  Your fee is $10.00
+
+
+
+
+//###########################################################################################################################################
+// Self Destruct Sequence using setTimeout()
+
+'use strict'
+
+function selfDestructSequence() {
+    setTimeout(function(){console.log("10")}, 0);
+    setTimeout(function(){console.log("9")}, 1000);
+    setTimeout(function(){console.log("8")}, 2000);
+    setTimeout(function(){console.log("7")}, 3000);
+    setTimeout(function(){console.log("6")}, 4000);
+    setTimeout(function(){console.log("5")}, 5000);
+    setTimeout(function(){console.log("4")}, 6000);
+    setTimeout(function(){console.log("3")}, 7000);
+    setTimeout(function(){console.log("2")}, 8000);
+    setTimeout(function(){console.log("1")}, 9000);
+    setTimeout(function(){console.log("KaaaBOOOOM")}, 10000);
 }
 
-console.log(foo)
 
-
-
-
-
-
-
-function getFee(vonsClubCard) {
-    const isMember = vonsClubCard ? "your fee is only $2.00" : "Your fee is $10.00"  //using const w/ ternary operator is better than if/else statement
-    return isMember
-}
-
-console.log(getFee(false))  //Output:  Your fee is $10.00
-
-
-
-
-
-
-
-
-
-
+selfDestructSequence();
 //###########################################################################################################################################
 //###########################################################################################################################################
 //https://www.bitdegree.org/learn/javascript-array-methods#javascript-array-methods-main-tips
 //https://www.bitdegree.org/learn/javascript-sort-array
 
-
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/discuss/?currentPage=1&orderBy=hot&query=&tag=javascript
-
-
-
 
