@@ -1493,28 +1493,71 @@
 
 //###########################################################################################################################################
 
-// Equivalent Numbers 
+// // Equivalent Numbers 
 
 
-//What is logged out here?
-console.log(900.9 === 300.3 * 3); 
+// //What is logged out here?
+// console.log(900.9 === 300.3 * 3); 
 
 
 
 
-// the reason the logged out is false is because JS treats decimal numbers unequally in the Unicode
-// in JS, 300.3 * 3 equals 900.000000000001. To get around this you'd do the following:
+// // the reason the logged out is false is because JS treats decimal numbers unequally in the Unicode
+// // in JS, 300.3 * 3 equals 900.000000000001. To get around this you'd do the following:
 
-(300.3 * 3).toFixed(2)  // Now the result will have 2 decimal digitis but the problem is that the result will be a string. 
-// To fix this we can do 1 of 3 things:
+// (300.3 * 3).toFixed(2)  // Now the result will have 2 decimal digitis but the problem is that the result will be a string. 
+// // To fix this we can do 1 of 3 things:
 
-Number((300.3 * 3).toFixed(2)) 
+// Number((300.3 * 3).toFixed(2)) 
 
-(300.3 * 3).toPrecision(12);  // digits including non decimal portion will not exceed 12.  But this will become a string....
-NUmber(300.3 * 3).toPrecision(12) // Now it's a number
+// (300.3 * 3).toPrecision(12);  // digits including non decimal portion will not exceed 12.  But this will become a string....
+// NUmber(300.3 * 3).toPrecision(12) // Now it's a number
 
 
-((300.3 * 10) * 3) / 10;  // This is the mathmatical way of doing the above solutions.
+// ((300.3 * 10) * 3) / 10;  // This is the mathmatical way of doing the above solutions.
+
+
+
+
+
+
+
+
+
+
+//###########################################################################################################################################
+// Objects and Strings
+
+var string1 = 'Tampa';
+var string2 = string1;
+string1 = 'Venice';
+console.log(string2);
+ 
+
+////////////////////////////////
+ 
+var person1 = {
+  name: 'Alex',
+  age: 30
+};
+ 
+var person2 = person1;
+person2.name = 'Kyle';
+console.log(person1);
+
+
+
+// Output 1:  Tampa
+// Output 2:  {name: 'Kyle', age: 30}
+// Why is this:
+// For the first one, when you reassigned string1 to be 'Venice' it doesn't affect string2 since you didn't reassign string2
+
+// for the second one, person1 was set equal to an object. You set person2 to reference the same object (person1).
+// We then set the name on person2 to equal 'Kyle'.  Since person2 and person1 are referencing the same object, the name is updated to 'Kyle'.
+
+
+
+
 
 
 
