@@ -1164,6 +1164,10 @@
 // var user1 = new User('John', 'Smith', 26, 'male');    //remember to write 'new' in order to create a new object.
 // var user200 = new User('Joe', "Samari", 25, 'male')
 
+
+
+
+
 //###########################################################################################################################################
 // Typeof
 // What will be logged out in the following code:
@@ -1172,19 +1176,72 @@
 // console.log(typeof {});             //Output:  object
 // console.log(typeof []);             //Output:  object
 
+
+
+
+
+
 //###########################################################################################################################################
 // The Bind Method     bind()   What is it, what parameters does it take, how is it used.
 
-// the bind method allows you to bind with the 'this' function
+// the bind method allows you to bind with the 'this' function. It also allows you to define parameters like in Example 3 below.
+
+
+// this.distance = 10000;    // Global object
+
+// const roadTrip1 = {
+//     distance: 3000, 
+//     getDistance: function() {
+//         return this.distance;
+//     }
+// };
+
+// const getTripDistance = roadTrip1.getDistance;
+
+// getTripDistance();  // Ouput: 10000.    Why isn't the output 3000?  Because the getTripDistance is the same function as the roadTrip1.getDistance function.
+//                     // When we run our getTripDistance function, the this context is no longer roadTrip1, but the global object instead.    
+//                     // We can fix this using bind method
+
+//                     //BIND METHOD
+// const getTripDistance2 = roadTrip1.getDistance.bind(roadTrip1); 
+// //console.log(getTripDistance2())                               // Output will be 3000.
+
+
+
+
+// Example 2   Binding------------------------
+
+// const roadTrip2 = {
+//     distance: 5000, 
+
+// }
+
+// const getTripDistance3 = roadTrip1.getDistance.bind(roadTrip2); 
+// console.log(getTripDistance3())                                     // Output will be 5000 since you binded roadTrip2
 
 
 
 
 
+// Example 3   Binding------------------------
+
+// this.distance = 10000;
+
+// const roadTrip1 = {
+//     distance: 3000,
+//     getDistance: function(unit, caption) {
+//         return this.distance + unit + caption;
+//     }
+// }
+
+// const roadTrip2 = {
+//     distance: 5000
+// }
 
 
+// const getTripDistance = roadTrip1.getDistance.bind(roadTrip2, '-km');
 
-
+// console.log(getTripDistance(' left to go'))  //Output:  5000-km left to go
 
 
 
@@ -1222,28 +1279,30 @@
 //###########################################################################################################################################
 // Self Destruct Sequence using setTimeout()
 
-'use strict'
+// 'use strict'
 
-function selfDestructSequence() {
-    setTimeout(function(){console.log("10")}, 0);
-    setTimeout(function(){console.log("9")}, 1000);
-    setTimeout(function(){console.log("8")}, 2000);
-    setTimeout(function(){console.log("7")}, 3000);
-    setTimeout(function(){console.log("6")}, 4000);
-    setTimeout(function(){console.log("5")}, 5000);
-    setTimeout(function(){console.log("4")}, 6000);
-    setTimeout(function(){console.log("3")}, 7000);
-    setTimeout(function(){console.log("2")}, 8000);
-    setTimeout(function(){console.log("1")}, 9000);
-    setTimeout(function(){console.log("KaaaBOOOOM")}, 10000);
-}
+// function selfDestructSequence() {
+//     setTimeout(function(){console.log("10")}, 0);
+//     setTimeout(function(){console.log("9")}, 1000);
+//     setTimeout(function(){console.log("8")}, 2000);
+//     setTimeout(function(){console.log("7")}, 3000);
+//     setTimeout(function(){console.log("6")}, 4000);
+//     setTimeout(function(){console.log("5")}, 5000);
+//     setTimeout(function(){console.log("4")}, 6000);
+//     setTimeout(function(){console.log("3")}, 7000);
+//     setTimeout(function(){console.log("2")}, 8000);
+//     setTimeout(function(){console.log("1")}, 9000);
+//     setTimeout(function(){console.log("KaaaBOOOOM")}, 10000);
+// }
 
 
-selfDestructSequence();
+// selfDestructSequence();
 //###########################################################################################################################################
 //###########################################################################################################################################
 //https://www.bitdegree.org/learn/javascript-array-methods#javascript-array-methods-main-tips
 //https://www.bitdegree.org/learn/javascript-sort-array
 
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/discuss/?currentPage=1&orderBy=hot&query=&tag=javascript
+
+
 
