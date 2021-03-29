@@ -1528,22 +1528,22 @@
 //###########################################################################################################################################
 // Objects and Strings
 
-var string1 = 'Tampa';
-var string2 = string1;
-string1 = 'Venice';
-console.log(string2);
+// var string1 = 'Tampa';
+// var string2 = string1;
+// string1 = 'Venice';
+// console.log(string2);
  
 
-////////////////////////////////
+// ////////////////////////////////
  
-var person1 = {
-  name: 'Alex',
-  age: 30
-};
+// var person1 = {
+//   name: 'Alex',
+//   age: 30
+// };
  
-var person2 = person1;
-person2.name = 'Kyle';
-console.log(person1);
+// var person2 = person1;
+// person2.name = 'Kyle';
+// console.log(person1);
 
 
 
@@ -1559,6 +1559,36 @@ console.log(person1);
 
 
 
+
+
+
+//###########################################################################################################################################
+// Strings and Arrays
+// What gets logged out as data2
+
+const data1 = 'Jordan Smith';
+ 
+const data2 = [].filter.call(data1, function(elem, index) {
+  return index > 6;
+});
+ 
+console.log(data2);
+
+
+
+
+
+// Answer
+// Output:  ['s', 'm', 'i', 't', 'h']
+// Why is this?
+
+
+// for strings, only use 'read-only' methods: filter, forEach, map, some, every, etc.
+// for strings you cannot use: push, pop, splice, shift, reverse, etc.
+
+
+
+//###########################################################################################################################################
 
 
 
