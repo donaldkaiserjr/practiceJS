@@ -1595,15 +1595,15 @@
 
 //###########################################################################################################################################
 // Object Properties
-const a = {};
-const b = { name: 'b' };
-const c = { name: 'c' };
+// const a = {};
+// const b = { name: 'b' };
+// const c = { name: 'c' };
 
-a[b] = 200;
-a[c] = 400;
+// a[b] = 200;
+// a[c] = 400;
 
-console.log(a[b]);  // Why is the output the way it is?  
-// this is because only strings can be properties on objects. 
+// console.log(a[b]);  // Why is the output the way it is?  
+// // this is because only strings can be properties on objects. 
 // When you do a[b] = 200 you're saying:   a['[object Ojbect]'] = 200
 // a['[object Object]'] = 400
 
@@ -1617,13 +1617,42 @@ console.log(a[b]);  // Why is the output the way it is?
 
 
 
+//###########################################################################################################################################
+// X And Y
+// What get's logged out for the variable X? 
+
+// var x = 10;
+
+// function y() {
+//     x = 100;
+//     return;
+//     function x() {}
+// }
+
+// y();
+
+// console.log(x)
 
 
 
 
+// The function x() doesn't matter because it's ran after the return statement
+// You'd think that the log out would be 100 since x in the function y's x value doesn't have a var or let.  But...
+// Due to hoisting, the function x() is being hoisted to the top of the function y.  The next line reassigns the local variable x to equal 100.
+// So x is never reassigned to be a function. So the var x = 10 (global variable) still equals 10. When you console.log x, you are logging out the global x.  
+//Here's a visual representation of what happened:
 
+// var x = 10;
 
+// function y() {
+//     function x() {}   // notice the function in the first example is below the return statement. But in reality, it's placed here since you can't 
+//                       // place a function after the return statement.
+//     x = 100;
+//     return;
+// }
 
+// y();
+// console.log(x)
 
 
 
