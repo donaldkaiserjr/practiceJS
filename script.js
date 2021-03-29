@@ -1563,16 +1563,16 @@
 
 
 //###########################################################################################################################################
-// Strings and Arrays
-// What gets logged out as data2
+// // Strings and Arrays
+// // What gets logged out as data2
 
-const data1 = 'Jordan Smith';
+// const data1 = 'Jordan Smith';
  
-const data2 = [].filter.call(data1, function(elem, index) {
-  return index > 6;
-});
+// const data2 = [].filter.call(data1, function(elem, index) {
+//   return index > 6;
+// });
  
-console.log(data2);
+// console.log(data2);
 
 
 
@@ -1588,7 +1588,39 @@ console.log(data2);
 
 
 
+
+
+
+
+
 //###########################################################################################################################################
+// Object Properties
+const a = {};
+const b = { name: 'b' };
+const c = { name: 'c' };
+
+a[b] = 200;
+a[c] = 400;
+
+console.log(a[b]);  // Why is the output the way it is?  
+// this is because only strings can be properties on objects. 
+// When you do a[b] = 200 you're saying:   a['[object Ojbect]'] = 200
+// a['[object Object]'] = 400
+
+// So when you do a console.log(a[b]), you're really saying:  console.log(a['[object Object]']);
+// In this case, the most recent object Object was 400, so that's why 400 gets logged out.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
